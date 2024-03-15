@@ -1,0 +1,85 @@
+public class HitungBangunDatar{
+    
+    public static void main(String[] args){
+        Scanner sc = new Scanner (System.in);
+        
+        System.out.println("1,BujurSangkar");
+        System.out.println("2.PersegiPanjang");
+        System.out.println("---Isikan pilihan---:");
+        
+        int pilihan = sc.nextInt();
+        if(pilihan==1){
+                Bujursangkar bs = new Bujursangkar(10);
+                int luas = bs.hitungKeliling();
+                int Keliling = bs.hitungKeliling();
+                System.out.println("Luas Bujur Sangkar :" + luas);
+                System.out.println("Keliling BujurSangkar :" + Keliling);
+                        
+                
+        }
+    }
+}
+package bangundatar;
+
+/**
+ *
+ * @author KOMPUTER JARKOM 21
+ */
+
+
+
+public class Bujursangkar extends BangunDatar {
+    
+    Bujursangkar(int s){
+        super(s);
+    }
+    int hitungluas(){
+        int s = super.getS();
+        return s * s;
+    }
+    int hitungKeliling(){
+        int s = super.getS();
+        return 4 * s;
+    }
+    public  String toString(){
+            String hasil  = "Luas Bujur Sangkar ;" + hitungluas()+ "\n"+
+        "Keliling BujurSangkar :" + hitungKeliling();
+        return hasil;
+       
+    }
+}
+package bangundatar;
+public class BangunDatar {
+   
+    int p,l,s;
+    
+    //Konsuktor untuk Bujursangkar
+    BangunDatar(int s){
+        this.s = s;
+        
+    }
+    //Konsuktor untuk persegi panjang
+    BangunDatar(int p, int l){
+        this.p = p;
+        this.l = l;
+        
+    }
+    
+    void setPL(int p, int l){
+        this.p = p;
+        this.l = l;
+    }
+    void setSisi (int s){
+        this.s = s;
+    }
+   int getP(){
+       return p;
+   }
+    int getL(){
+        return l;
+    }   
+    int getS(){
+        return s;
+    }
+                                                     
+        }
